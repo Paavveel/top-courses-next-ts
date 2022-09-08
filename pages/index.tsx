@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Button, Htag, P } from '../components';
+import { Button, Htag, P, Tag } from '../components';
 
 const Home: NextPage = () => {
   return (
@@ -35,6 +35,19 @@ const Home: NextPage = () => {
         error corrupti quis earum. Blanditiis voluptate deleniti modi dolorum
         eos in architecto ipsa dignissimos maiores eveniet!
       </P>
+      <Tag size='s'>Ghost</Tag>
+      <Tag size='m' color='red'>
+        Red
+      </Tag>
+      <Tag size='s' color='green'>
+        Green
+      </Tag>
+      <Tag size='s' color='primary'>
+        Primary
+      </Tag>
+      <Tag size='s' color='gray'>
+        10
+      </Tag>
     </div>
   );
 };
