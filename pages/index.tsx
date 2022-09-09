@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Button, Htag, P, Tag } from '../components';
+import { Button, Htag, P, Rating, Tag } from '../components';
 
 const Home: NextPage = () => {
   return (
@@ -48,6 +48,7 @@ const Home: NextPage = () => {
       <Tag size='s' color='gray'>
         10
       </Tag>
+      <Rating rating={4} />
     </div>
   );
 };
