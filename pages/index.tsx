@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { Button, Htag, P, Rating, Tag } from '../components';
+import { withLayout } from '../layout/Layout';
 
 const Home: NextPage = () => {
   const [rating, setRating] = useState<number>(3);
 
   return (
-    <div>
+    <>
       <Htag tag='h1'>Заголовок</Htag>
       <Button appearance='primary' arrow='right'>
         Кнопка 1
@@ -53,8 +54,8 @@ const Home: NextPage = () => {
       </Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
       <Rating rating={rating} />
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default withLayout(Home);
