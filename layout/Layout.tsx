@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { NextPage } from 'next';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import styles from './Layout.module.css';
@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 export const withLayout = <T extends Record<string, unknown>>(
-  Component: FunctionComponent<T>
+  Component: NextPage<T>
 ) => {
   return function withLayoutComponent(props: T) {
     return (
