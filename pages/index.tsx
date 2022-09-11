@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { Button, Htag, P, Rating, Tag } from '../components';
-import { MenuItem } from '../interfaces/menu.interface';
+import { MenuItem } from '../interfaces';
 import { withLayout } from '../layout/Layout';
 
 const Home = ({ menu }: HomeProps) => {
@@ -17,30 +17,9 @@ const Home = ({ menu }: HomeProps) => {
       <Button appearance='ghost' arrow='down'>
         Кнопка 2
       </Button>
-      <P size='l'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-        fugiat modi. Perferendis veniam totam possimus atque enim, nostrum
-        officia delectus natus distinctio repellendus eligendi deserunt
-        recusandae voluptas officiis nulla nesciunt dignissimos ea sit odit
-        error corrupti quis earum. Blanditiis voluptate deleniti modi dolorum
-        eos in architecto ipsa dignissimos maiores eveniet!
-      </P>
-      <P>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-        fugiat modi. Perferendis veniam totam possimus atque enim, nostrum
-        officia delectus natus distinctio repellendus eligendi deserunt
-        recusandae voluptas officiis nulla nesciunt dignissimos ea sit odit
-        error corrupti quis earum. Blanditiis voluptate deleniti modi dolorum
-        eos in architecto ipsa dignissimos maiores eveniet!
-      </P>
-      <P size='s'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-        fugiat modi. Perferendis veniam totam possimus atque enim, nostrum
-        officia delectus natus distinctio repellendus eligendi deserunt
-        recusandae voluptas officiis nulla nesciunt dignissimos ea sit odit
-        error corrupti quis earum. Blanditiis voluptate deleniti modi dolorum
-        eos in architecto ipsa dignissimos maiores eveniet!
-      </P>
+      <P size='l'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+      <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+      <P size='s'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
       <Tag size='s'>Ghost</Tag>
       <Tag size='m' color='red'>
         Red
