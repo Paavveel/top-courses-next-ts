@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { PropsWithChildren } from 'react';
+import { AppContextProvider, IAppContext } from '../context';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import styles from './Layout.module.css';
@@ -16,14 +17,17 @@ const Layout = ({ children }: PropsWithChildren) => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   Component: NextPage<T>
 ) => {
   return function withLayoutComponent(props: T) {
+    const { menu, firstCategory } = props;
     return (
-      <Layout>
-        <Component {...props} />
-      </Layout>
+      <AppContextProvider menu={menu} firstCategory={firstCategory}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </AppContextProvider>
     );
   };
 };
