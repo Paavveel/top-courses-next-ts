@@ -1,8 +1,14 @@
 import cn from 'classnames';
+import { PropsWithChildren } from 'react';
 import styles from './Htag.module.css';
 import { HtagProps } from './Htag.props';
 
-export const Htag = ({ tag, children, className, ...props }: HtagProps) => {
+export const Htag = ({
+  tag,
+  children,
+  className,
+  ...props
+}: PropsWithChildren<HtagProps>) => {
   switch (tag) {
     case 'h1':
       return (

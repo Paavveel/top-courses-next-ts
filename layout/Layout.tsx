@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
+import { PropsWithChildren } from 'react';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import styles from './Layout.module.css';
-import { LayoutProps } from './Layout.props';
 import { Sidebar } from './Sidebar';
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className={styles.wrapper}>
       <Header className={styles.header} />

@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { PropsWithChildren } from 'react';
 import styles from './Tag.module.css';
 import { TagProps } from './Tag.props';
 
@@ -9,7 +10,7 @@ export const Tag = ({
   href,
   className,
   ...props
-}: TagProps) => {
+}: PropsWithChildren<TagProps>) => {
   return (
     <div
       className={cn(styles.tag, className, {

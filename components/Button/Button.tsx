@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { PropsWithChildren } from 'react';
 import ArrowIcon from './arrow.svg';
 import styles from './Button.module.css';
 import { ButtonProps } from './Button.props';
@@ -9,7 +10,7 @@ export const Button = ({
   children,
   className,
   ...props
-}: ButtonProps) => {
+}: PropsWithChildren<ButtonProps>) => {
   return (
     <button
       className={cn(styles.button, className, {
