@@ -16,25 +16,25 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   {
     route: 'courses',
     name: 'Курсы',
-    icon: CoursesIcon,
+    icon: <CoursesIcon />,
     id: TopLevelCategory.Courses,
   },
   {
     route: 'services',
     name: 'Сервисы',
-    icon: ServicesIcon,
+    icon: <ServicesIcon />,
     id: TopLevelCategory.Services,
   },
   {
     route: 'books',
     name: 'Книги',
-    icon: BooksIcon,
+    icon: <BooksIcon />,
     id: TopLevelCategory.Books,
   },
   {
     route: 'products',
     name: 'Продукты',
-    icon: ProductsIcon,
+    icon: <ProductsIcon />,
     id: TopLevelCategory.Products,
   },
 ];
@@ -54,8 +54,8 @@ export const Menu = () => {
                 })}
               >
                 {m.icon}
+                <span>{m.name}</span>
               </div>
-              <span>{m.name}</span>
             </a>
             {m.id === firstCategory && buildSecondLevel(m)}
           </div>
@@ -65,7 +65,7 @@ export const Menu = () => {
   };
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
-      <div>
+      <div className={styles.secondBlock}>
         {menu.map(m => (
           <div key={m._id.secondCategory}>
             <div className={styles.secondLevel}>{m._id.secondCategory}</div>
@@ -84,9 +84,10 @@ export const Menu = () => {
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map(p => (
       <a
+        key={p.alias}
         href={`/${route}/${p.alias}`}
         className={cn(styles.thirdLevel, {
-          [styles.thirdLevelActive]: true,
+          [styles.thirdLevelActive]: false,
         })}
       >
         {p.category}
@@ -94,9 +95,5 @@ export const Menu = () => {
     ));
   };
 
-  return (
-    <div className={styles.menu}>
-      <ul>{buildFirstLevel()}</ul>
-    </div>
-  );
+  return <div className={styles.menu}>{buildFirstLevel()}</div>;
 };
