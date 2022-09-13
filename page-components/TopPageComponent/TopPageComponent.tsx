@@ -28,7 +28,9 @@ export const TopPageComponent = ({
         </Tag>
       </div>
 
-      {firstCategory === TopLevelCategory.Courses && <HhData {...page.hh} />}
+      {firstCategory === TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
     </div>
   );
 };
