@@ -1,3 +1,4 @@
+import { toRub } from '../../helpers/helpers';
 import { Card } from '../Card/Card';
 import styles from './HhData.module.css';
 import { HhDataProps } from './HhData.props';
@@ -18,7 +19,7 @@ export const HhData = ({
       <Card className={styles.salary}>
         <div>
           <div className={styles.title}>Начальный</div>
-          <div className={styles.salaryValue}>{juniorSalary}</div>
+          <div className={styles.salaryValue}>{toRub.format(juniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon />
@@ -27,7 +28,7 @@ export const HhData = ({
         </div>
         <div>
           <div className={styles.title}>Средний</div>
-          <div className={styles.salaryValue}>{middleSalary}</div>
+          <div className={styles.salaryValue}>{toRub.format(middleSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon className={styles.filled} />
@@ -36,7 +37,7 @@ export const HhData = ({
         </div>
         <div>
           <div className={styles.title}>Профессионал</div>
-          <div className={styles.salaryValue}>{seniorSalary}</div>
+          <div className={styles.salaryValue}>{toRub.format(seniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon className={styles.filled} />
