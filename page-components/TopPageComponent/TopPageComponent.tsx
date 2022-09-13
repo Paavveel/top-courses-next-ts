@@ -1,5 +1,5 @@
 // import cn from 'classnames';
-import { HhData, Htag, Tag } from '../../components';
+import { Advantages, HhData, Htag, Tag } from '../../components';
 import { TopLevelCategory } from '../../interfaces';
 import styles from './TopPageComponent.module.css';
 import { TopPageComponentProps } from './TopPageComponent.props';
@@ -30,6 +30,12 @@ export const TopPageComponent = ({
 
       {firstCategory === TopLevelCategory.Courses && page.hh && (
         <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag='h2'>Преимущества</Htag>
+          <Advantages advantages={page.advantages} />
+        </>
       )}
     </div>
   );
