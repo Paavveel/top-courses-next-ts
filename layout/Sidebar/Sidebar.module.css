@@ -1,0 +1,14 @@
+.sidebar {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--primary);
+  margin-top: 34px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+}
