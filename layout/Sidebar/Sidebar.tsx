@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import Link from 'next/link';
+import { Search } from '../../components';
 import { Menu } from '../Menu';
 import styles from './Sidebar.module.css';
 import { SidebarProps } from './Sidebar.props';
@@ -10,7 +11,7 @@ export const Sidebar = ({ className, ...props }: SidebarProps) => {
       <Link href='/'>
         <a className={styles.logo}>Top Courses</a>
       </Link>
-      <div>Search</div>
+      <Search />
       <Menu />
     </div>
   );
