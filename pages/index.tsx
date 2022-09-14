@@ -35,7 +35,7 @@ const Home = ({ menu }: HomeProps) => {
       </Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
       <Rating rating={rating} />
-      <Input />
+      <Input placeholder='Имя' />
     </>
   );
 };
