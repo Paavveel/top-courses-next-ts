@@ -1,14 +1,18 @@
 .sort {
-  /* display: inline-block; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   gap: 40px;
 }
 .sort span {
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 20px auto;
   gap: 8px;
   align-items: center;
+  cursor: pointer;
+}
+
+.sort span:not(.active) {
+  grid-template-columns: auto;
 }
 
 .sortIcon {

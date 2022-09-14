@@ -22,7 +22,7 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps) => {
         onClick={() => setSort(SortEnum.Price)}
       >
         <SortIcon className={styles.sortIcon} />
-        По&nbsp;цене
+        По цене
       </span>
     </div>
   );
