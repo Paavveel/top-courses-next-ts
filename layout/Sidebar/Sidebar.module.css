@@ -6,7 +6,7 @@
 
 .logo {
   color: var(--primary);
-  margin-top: 34px;
+  margin-top: 0;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 28px;

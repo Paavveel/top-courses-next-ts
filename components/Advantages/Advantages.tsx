@@ -7,7 +7,7 @@ export const Advantages = ({ advantages }: AdvantagesProps) => {
   return (
     <>
       {advantages.map(a => (
-        <div key={a._id} className={styles.advantages}>
+        <div key={a._id} className={styles.advantage}>
           <CheckIcon />
           <div className={styles.title}>{a.title}</div>
           <hr className={styles.vline} />
