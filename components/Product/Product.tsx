@@ -1,5 +1,5 @@
 // import cn from 'classnames';
-import { toRub } from '../../helpers/helpers';
+import { declOfNum, toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
 import { Divider } from '../Divider/Divider';
@@ -46,7 +46,10 @@ export const Product = ({ product }: ProductProps) => {
       </div>
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>кредит</div>
-      <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
+      <div className={styles.rateTitle}>
+        {product.reviewCount}{' '}
+        {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+      </div>
       <Divider className={styles.hr} />
       <div className={styles.description}>{product.description}</div>
       <div className={styles.feature}>feature</div>
