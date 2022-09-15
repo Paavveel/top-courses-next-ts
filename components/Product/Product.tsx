@@ -2,6 +2,7 @@
 import { toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
+import { Divider } from '../Divider/Divider';
 import { Rating } from '../Rating/Rating';
 import { Tag } from '../Tag/Tag';
 import styles from './Product.module.css';
@@ -42,9 +43,7 @@ export const Product = ({ product }: ProductProps) => {
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>кредит</div>
       <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.description}>{product.description}</div>
       <div className={styles.feature}>feature</div>
       <div className={styles.advBlock}>
@@ -57,9 +56,7 @@ export const Product = ({ product }: ProductProps) => {
           <div>{product.disadvantages}</div>
         </div>
       </div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.actions}>
         <Button appearance='primary'>Узнать подробнее</Button>
         <Button appearance='ghost' arrow='right'>
