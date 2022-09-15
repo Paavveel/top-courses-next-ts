@@ -81,11 +81,48 @@
 .priceTitle,
 .creditTitle,
 .rateTitle {
-  font-weight: 300;
   font-size: 14px;
   line-height: 19px;
+  font-weight: 300;
 }
 
 .hr {
   margin: 20px 0;
+}
+
+.tag {
+  margin-top: 7px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.advBlock {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.advTitle {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.advantages {
+  border-left: 3px solid var(--green);
+  border-radius: 2px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.disadvantages {
+  border-left: 3px solid var(--red);
+  border-radius: 2px;
+  padding-left: 15px;
+}
+
+.reviewButton {
+  margin-left: 20px;
 }
