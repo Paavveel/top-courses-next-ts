@@ -1,4 +1,5 @@
 // import cn from 'classnames';
+import { toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
 import { Rating } from '../Rating/Rating';
@@ -6,7 +7,7 @@ import { Tag } from '../Tag/Tag';
 import styles from './Product.module.css';
 import { ProductProps } from './Product.props';
 
-export const Product = ({ product, className, ...props }: ProductProps) => {
+export const Product = ({ product }: ProductProps) => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
@@ -16,8 +17,18 @@ export const Product = ({ product, className, ...props }: ProductProps) => {
         />
       </div>
       <div className={styles.title}>{product.title}</div>
-      <div className={styles.price}>{product.price}</div>
-      <div className={styles.credit}>{product.credit}</div>
+      <div className={styles.price}>
+        {`${toRub.format(product.price)}`}
+        {product.oldPrice && (
+          <Tag color='green' className={styles.oldPrice}>
+            {toRub.format(product.price - product.oldPrice)}
+          </Tag>
+        )}
+      </div>
+      <div className={styles.credit}>
+        {`${toRub.format(product.credit)}`}
+        <span>/мес</span>
+      </div>
       <div className={styles.rating}>
         <Rating rating={product.reviewAvg ?? product.initialRating} />
       </div>

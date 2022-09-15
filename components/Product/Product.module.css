@@ -1,7 +1,7 @@
 .product {
   display: grid;
   grid-template-columns:
-    [start] 7px [logoend] 30px [titlestart] calc(50% - 100px)
+    [start] 70px [logoend] 30px [titlestart] calc(50% - 100px)
     [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
 
   margin-bottom: 30px;
@@ -45,4 +45,43 @@
 
 .advBlock {
   grid-column: middle / end;
+}
+
+.logo img {
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+  align-self: end;
+}
+
+.price,
+.credit {
+  font-size: 20px;
+  line-height: 27px;
+  align-self: end;
+}
+
+.credit span {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.oldPrice {
+  margin-left: 5px;
+}
+
+.rating {
+  align-self: end;
+}
+
+.priceTitle,
+.creditTitle,
+.rateTitle {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
 }
