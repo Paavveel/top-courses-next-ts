@@ -13,28 +13,28 @@ export const Product = ({ product }: ProductProps) => {
     <Card className={styles.product}>
       <div className={styles.logo}>
         <img
-          src={`${process.env.NEXT_PUBLIC_DOMAIN}${product.image}`}
-          alt={product.title}
+          src={`${process.env.NEXT_PUBLIC_DOMAIN}${product?.image}`}
+          alt={product?.title}
         />
       </div>
-      <div className={styles.title}>{product.title}</div>
-      <div className={styles.price}>
-        {`${toRub.format(product.price)}`}
-        {product.oldPrice && (
+      <div className={styles.title}>{product?.title}</div>
+      <div className={styles?.price}>
+        {product.price && `${toRub.format(product.price)}`}
+        {product.oldPrice && product.price && (
           <Tag color='green' className={styles.oldPrice}>
             {toRub.format(product.price - product.oldPrice)}
           </Tag>
         )}
       </div>
       <div className={styles.credit}>
-        {`${toRub.format(product.credit)}`}
+        {product.credit && `${toRub.format(product.credit)}`}
         <span>/мес</span>
       </div>
       <div className={styles.rating}>
-        <Rating rating={product.reviewAvg ?? product.initialRating} />
+        <Rating rating={product.reviewAvg ?? product?.initialRating} />
       </div>
       <div className={styles.tags}>
-        {product.categories.map(c => (
+        {product.categories?.map(c => (
           <Tag key={c} color='ghost'>
             {c}
           </Tag>
@@ -42,18 +42,18 @@ export const Product = ({ product }: ProductProps) => {
       </div>
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>кредит</div>
-      <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
+      <div className={styles.rateTitle}>{product?.reviewCount} отзывов</div>
       <Divider className={styles.hr} />
-      <div className={styles.description}>{product.description}</div>
+      <div className={styles.description}>{product?.description}</div>
       <div className={styles.feature}>feature</div>
       <div className={styles.advBlock}>
         <div className={styles.advantages}>
           <div>Преимущества</div>
-          <div>{product.advantages}</div>
+          <div>{product?.advantages}</div>
         </div>
         <div className={styles.disadvantages}>
           <div>Недостатки</div>
-          <div>{product.disadvantages}</div>
+          <div>{product?.disadvantages}</div>
         </div>
       </div>
       <Divider className={styles.hr} />
