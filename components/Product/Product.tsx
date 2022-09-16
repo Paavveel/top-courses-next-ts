@@ -1,4 +1,4 @@
-// import cn from 'classnames';
+import Image from 'next/image';
 import { declOfNum, toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
@@ -12,9 +12,11 @@ export const Product = ({ product }: ProductProps) => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img
+        <Image
           src={`${process.env.NEXT_PUBLIC_DOMAIN}${product.image}`}
           alt={product.title}
+          width={70}
+          height={70}
         />
       </div>
       <div className={styles.title}>{product.title}</div>
