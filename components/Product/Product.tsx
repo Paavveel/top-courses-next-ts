@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import Image from 'next/image';
 import { declOfNum, toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
@@ -77,9 +78,11 @@ export const Product = ({ product }: ProductProps) => {
           </div>
         )}
       </div>
-      <Divider className={styles.hr} />
+      <Divider className={cn(styles.hr, styles.hr2)} />
       <div className={styles.actions}>
-        <Button appearance='primary'>Узнать подробнее</Button>
+        <Button appearance='primary' className={styles.moreButton}>
+          Узнать подробнее
+        </Button>
         <Button
           appearance='ghost'
           arrow='right'
