@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
+  font-family: inherit;
   border: none;
   border-radius: 5px;
   font-size: 14px;
