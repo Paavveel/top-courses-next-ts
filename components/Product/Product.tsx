@@ -7,6 +7,7 @@ import { Card } from '../Card/Card';
 import { Divider } from '../Divider/Divider';
 import { Rating } from '../Rating/Rating';
 import { Review } from '../Review/Review';
+import { ReviewForm } from '../ReviewForm/ReviewForm';
 import { Tag } from '../Tag/Tag';
 import styles from './Product.module.css';
 import { ProductProps } from './Product.props';
@@ -111,6 +112,7 @@ export const Product = ({ product }: ProductProps) => {
             <Divider />
           </>
         ))}
+        <ReviewForm productId={product._id} />
       </Card>
     </>
   );
