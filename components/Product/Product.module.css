@@ -151,7 +151,8 @@
   font-weight: 500;
 }
 
-.reviews {
+.reviewsWrapper {
+  margin-bottom: 30px;
 }
 
 .closed {
