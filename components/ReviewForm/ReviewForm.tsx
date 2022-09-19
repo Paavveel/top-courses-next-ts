@@ -1,9 +1,11 @@
 import cn from 'classnames';
+import { Controller, useForm } from 'react-hook-form';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { Rating } from '../Rating/Rating';
 import { Textarea } from '../Textarea/Textarea';
 import CloseIcon from './close.svg';
+import { IReviewForm } from './ReviewForm.interface';
 import styles from './ReviewForm.module.css';
 import { ReviewFormProps } from './ReviewForm.props';
 
@@ -12,16 +14,37 @@ export const ReviewForm = ({
   className,
   ...props
 }: ReviewFormProps) => {
+  const { register, control, handleSubmit } = useForm<IReviewForm>();
+
+  const onSubmit = (data: IReviewForm) => {
+    console.log(data);
+  };
+
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(className, styles.reviewForm)} {...props}>
-        <Input placeholder='Имя' />
-        <Input placeholder='Заголовок отзыва' />
+        <Input {...register('name')} placeholder='Имя' />
+        <Input {...register('title')} placeholder='Заголовок отзыва' />
         <div className={styles.rating}>
           <span>Оценка:</span>
-          <Rating rating={0} />
+          <Controller
+            control={control}
+            name='rating'
+            render={({ field: { value, ref, onChange } }) => (
+              <Rating
+                rating={value}
+                ref={ref}
+                setRating={onChange}
+                isEditable
+              />
+            )}
+          />
         </div>
-        <Textarea placeholder='Текст отзыва' className={styles.description} />
+        <Textarea
+          {...register('description')}
+          placeholder='Текст отзыва'
+          className={styles.description}
+        />
         <div className={styles.submit}>
           <Button appearance='primary' className={styles.submitButton}>
             Отправить
@@ -37,6 +60,6 @@ export const ReviewForm = ({
         <div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
         <CloseIcon className={styles.successClose} />
       </div>
-    </>
+    </form>
   );
 };
