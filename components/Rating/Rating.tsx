@@ -12,7 +12,7 @@ import StarIcon from './star.svg';
 
 export const Rating = forwardRef(
   (
-    { rating, isEditable = false, setRating, ...props }: RatingProps,
+    { rating, isEditable = false, setRating, error, ...props }: RatingProps,
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
@@ -66,10 +66,17 @@ export const Rating = forwardRef(
     };
 
     return (
-      <div ref={ref} {...props}>
+      <div
+        ref={ref}
+        className={cn(styles.ratingWrapper, {
+          [styles.error]: error,
+        })}
+        {...props}
+      >
         {ratingArray.map((r, i) => (
           <span key={i}>{r}</span>
         ))}
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
       </div>
     );
   }

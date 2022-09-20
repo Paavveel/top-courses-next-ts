@@ -47,12 +47,14 @@ export const ReviewForm = ({
           <Controller
             control={control}
             name='rating'
+            rules={{ required: { value: true, message: 'Укажите рейтинг' } }}
             render={({ field: { value, ref, onChange } }) => (
               <Rating
                 rating={value}
                 ref={ref}
                 setRating={onChange}
                 isEditable
+                error={errors.rating}
               />
             )}
           />
