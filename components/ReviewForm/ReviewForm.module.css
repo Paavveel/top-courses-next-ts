@@ -30,23 +30,35 @@
   gap: 20px;
 }
 
-.success {
+.panel {
   position: relative;
   padding: 20px;
-  background: var(--green-light);
   border-radius: 5px;
   margin-top: 20px;
+}
+
+.success {
+  background: var(--green-light);
+}
+
+.error {
+  background: var(--red-light);
 }
 
 .successTitle {
   font-weight: 700;
   margin-bottom: 10px;
 }
-.successClose {
+
+.close {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+
+.error .close path {
+  stroke: var(--red);
 }
 
 @media (max-width: 1100px) {
