@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { declOfNum, toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
@@ -12,11 +12,20 @@ import { Tag } from '../Tag/Tag';
 import styles from './Product.module.css';
 import { ProductProps } from './Product.props';
 
-export const Product = ({ product }: ProductProps) => {
+export const Product = ({ product, className, ...props }: ProductProps) => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image
@@ -56,8 +65,10 @@ export const Product = ({ product }: ProductProps) => {
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
         <div className={styles.rateTitle}>
-          {product.reviewCount}{' '}
-          {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+          <a href='#ref' onClick={scrollToReview}>
+            {product.reviewCount}{' '}
+            {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+          </a>
         </div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description}</div>
@@ -100,6 +111,7 @@ export const Product = ({ product }: ProductProps) => {
         </div>
       </Card>
       <Card
+        ref={reviewRef}
         color='blue'
         className={cn(styles.reviews, {
           [styles.opened]: isReviewOpened,
@@ -114,6 +126,6 @@ export const Product = ({ product }: ProductProps) => {
         ))}
         <ReviewForm productId={product._id} />
       </Card>
-    </>
+    </div>
   );
 };
