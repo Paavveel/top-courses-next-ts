@@ -12,10 +12,6 @@ const variants = {
   visible: {
     marginBottom: 20,
     height: 'auto',
-    transition: {
-      // when: 'beforeChildren',
-      staggerChildren: 0.02,
-    },
   },
   hidden: {
     height: 0,
@@ -26,11 +22,9 @@ const variants = {
 const variantsChildren = {
   visible: {
     opacity: 1,
-    y: 0,
   },
   hidden: {
-    opacity: 0,
-    y: '-20%',
+    opacity: 0.5,
   },
 };
 
