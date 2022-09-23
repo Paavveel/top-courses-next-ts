@@ -1,0 +1,9 @@
+.logo {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+}
