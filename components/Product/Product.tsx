@@ -13,6 +13,11 @@ import { Tag } from '../Tag/Tag';
 import styles from './Product.module.css';
 import { ProductProps } from './Product.props';
 
+const variants = {
+  visible: { opacity: 1, height: 'auto' },
+  hidden: { opacity: 0, height: 0 },
+};
+
 export const Product = motion(
   forwardRef(
     (
@@ -116,22 +121,22 @@ export const Product = motion(
               </Button>
             </div>
           </Card>
-          <Card
-            ref={reviewRef}
-            color='blue'
-            className={cn(styles.reviews, {
-              [styles.opened]: isReviewOpened,
-              [styles.closed]: !isReviewOpened,
-            })}
+          <motion.div
+            className={styles.reviewsContainer}
+            variants={variants}
+            initial='hidden'
+            animate={isReviewOpened ? 'visible' : 'hidden'}
           >
-            {product.reviews?.map(r => (
-              <div key={r._id} className={styles.reviewsWrapper}>
-                <Review review={r} />
-                <Divider />
-              </div>
-            ))}
-            <ReviewForm productId={product._id} />
-          </Card>
+            <Card ref={reviewRef} color='blue' className={styles.reviews}>
+              {product.reviews?.map(r => (
+                <div key={r._id} className={styles.reviewsWrapper}>
+                  <Review review={r} />
+                  <Divider />
+                </div>
+              ))}
+              <ReviewForm productId={product._id} />
+            </Card>
+          </motion.div>
         </div>
       );
     }
