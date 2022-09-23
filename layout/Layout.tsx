@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { PropsWithChildren } from 'react';
+import { Up } from '../components';
 import { AppContextProvider, IAppContext } from '../context';
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -13,6 +14,7 @@ const Layout = ({ children }: PropsWithChildren) => {
       <Sidebar className={styles.sidebar} />
       <main className={styles.main}>{children}</main>
       <Footer className={styles.footer} />
+      <Up />
     </div>
   );
 };

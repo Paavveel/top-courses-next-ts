@@ -1,7 +1,16 @@
 .up {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
   width: 40px;
   height: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   background: var(--primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.up:hover {
+  background-color: var(--primary-hover);
 }
