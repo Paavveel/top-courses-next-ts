@@ -11,7 +11,7 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       options: {
         prettier: false,
-        svgo: true,
+        svgo: false,
         svgoConfig: {
           plugins: [
             {
