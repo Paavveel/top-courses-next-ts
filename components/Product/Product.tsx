@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ForwardedRef, forwardRef, useRef, useState } from 'react';
+import { ForwardedRef, forwardRef, MouseEvent, useRef, useState } from 'react';
 import { declOfNum, toRub } from '../../helpers/helpers';
 import { Button } from '../Button/Button';
 import { Card } from '../Card/Card';
@@ -27,8 +27,9 @@ export const Product = motion(
       const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
       const reviewRef = useRef<HTMLDivElement>(null);
 
-      const scrollToReview = () => {
-        setIsReviewOpened(true);
+      const scrollToReview = async (event: MouseEvent) => {
+        event.preventDefault();
+        await setIsReviewOpened(true);
         reviewRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
@@ -76,7 +77,7 @@ export const Product = motion(
             <div className={styles.priceTitle}>цена</div>
             <div className={styles.creditTitle}>кредит</div>
             <div className={styles.rateTitle}>
-              <a href='#ref' onClick={scrollToReview}>
+              <a href='#ref' onClick={e => scrollToReview(e)}>
                 {product.reviewCount}{' '}
                 {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
               </a>
