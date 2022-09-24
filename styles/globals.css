@@ -1,3 +1,18 @@
+:root {
+  --black: #3b434e;
+  --white: white;
+  --gray-light: #ebebeb;
+  --gray: #a4a4a4;
+  --gray-dark: #6c7077;
+  --primary: #7351f5;
+  --primary-hover: #5a3ad9;
+  --red-light: #ffbbaf;
+  --red: #fc836d;
+  --green-light: #c8f8e4;
+  --green: #007b47;
+  --font-family: 'Noto Sans', sans-serif;
+}
+
 html,
 body {
   padding: 0;
@@ -24,19 +39,4 @@ a {
     color: white;
     background: black;
   }
-}
-
-:root {
-  --black: #3b434e;
-  --white: white;
-  --gray-light: #ebebeb;
-  --gray: #a4a4a4;
-  --gray-dark: #787d85;
-  --primary: #7653fc;
-  --primary-hover: #5a3ad9;
-  --red-light: #ffbbaf;
-  --red: #fc836d;
-  --green-light: #c8f8e4;
-  --green: #1dc37e;
-  --font-family: 'Noto Sans', sans-serif;
 }
