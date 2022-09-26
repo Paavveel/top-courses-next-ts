@@ -36,7 +36,7 @@ export const Product = motion(
         });
         setTimeout(() => {
           reviewRef.current?.focus();
-        }, 400);
+        }, 700);
       };
 
       return (
