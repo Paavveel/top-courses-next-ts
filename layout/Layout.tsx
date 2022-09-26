@@ -35,7 +35,7 @@ const Layout = ({ children }: PropsWithChildren) => {
       </a>
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
-      <main ref={mainRef} tabIndex={0} className={styles.main}>
+      <main ref={mainRef} tabIndex={0} className={styles.main} role='main'>
         {children}
       </main>
       <Footer className={styles.footer} />

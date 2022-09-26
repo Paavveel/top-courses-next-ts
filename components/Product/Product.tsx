@@ -52,14 +52,19 @@ export const Product = motion(
             </div>
             <div className={styles.title}>{product.title}</div>
             <div className={styles.price}>
-              {product.price && `${toRub.format(product.price)}`}
+              <span>
+                <span className='visuallyHidden'>цена</span>
+                {product.price && `${toRub.format(product.price)}`}
+              </span>
               {product.oldPrice && product.price && (
                 <Tag color='green' className={styles.oldPrice}>
+                  <span className='visuallyHidden'>скидка</span>
                   {toRub.format(product.price - product.oldPrice)}
                 </Tag>
               )}
             </div>
             <div className={styles.credit}>
+              <span className='visuallyHidden'>кредит</span>
               {product.credit && (
                 <>
                   {toRub.format(product.credit)}
@@ -68,6 +73,9 @@ export const Product = motion(
               )}
             </div>
             <div className={styles.rating}>
+              <span className='visuallyHidden'>{`рейтинг ${
+                product.reviewAvg ?? product.initialRating
+              }`}</span>
               <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
@@ -77,8 +85,12 @@ export const Product = motion(
                 </Tag>
               ))}
             </div>
-            <div className={styles.priceTitle}>цена</div>
-            <div className={styles.creditTitle}>кредит</div>
+            <div className={styles.priceTitle} aria-hidden={true}>
+              цена
+            </div>
+            <div className={styles.creditTitle} aria-hidden={true}>
+              кредит
+            </div>
             <div className={styles.rateTitle}>
               <a href='#ref' onClick={e => scrollToReview(e)}>
                 {product.reviewCount}{' '}
@@ -120,6 +132,7 @@ export const Product = motion(
                 arrow={isReviewOpened ? 'down' : 'right'}
                 className={styles.reviewButton}
                 onClick={() => setIsReviewOpened(!isReviewOpened)}
+                aria-expanded={isReviewOpened}
               >
                 Читать отзывы
               </Button>

@@ -31,7 +31,7 @@ export const TopPageComponent = ({
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <Htag tag='h1'>{page?.title}</Htag>
-        <Tag color='gray' size='m'>
+        <Tag color='gray' size='m' aria-label={`${products.length} элементов`}>
           {products && products.length}
         </Tag>
         <Sort sort={sort} setSort={setSort} />
