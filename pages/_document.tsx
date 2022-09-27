@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang='ru'>
       <Head>
-        <meta name='description' content='Top Courses - топ курсов' />
         <link rel='icon' href='/favicon.ico' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
