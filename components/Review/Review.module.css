@@ -31,6 +31,7 @@
     grid-column: start / dateend;
   }
 }
+
 @media screen and (max-width: 380px) {
   .rating {
     grid-column: start / end;

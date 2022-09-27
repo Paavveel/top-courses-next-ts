@@ -1,13 +1,12 @@
 .reviewForm {
-  font-size: 14px;
-  line-height: 24px;
-  margin-top: 30px;
-
   display: grid;
   grid-template-columns: [start] auto 1fr auto [end];
   gap: 20px 30px;
-  justify-items: start;
   align-items: center;
+  justify-items: start;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .submit,
@@ -20,8 +19,8 @@
 }
 
 .submitButton {
-  padding-left: 36px;
   padding-right: 36px;
+  padding-left: 36px;
 }
 
 .rating {
@@ -32,9 +31,9 @@
 
 .panel {
   position: relative;
+  margin-top: 20px;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 20px;
 }
 
 .success {
@@ -46,17 +45,17 @@
 }
 
 .successTitle {
-  font-weight: 700;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .close {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .error .close line {
@@ -67,6 +66,7 @@
   .reviewForm {
     grid-template-columns: [start] 1fr 1fr [end];
   }
+
   .rating {
     grid-column: start / end;
   }
@@ -76,6 +76,7 @@
   .reviewForm {
     grid-template-columns: [start] 1fr [end];
   }
+
   .rating {
     grid-column: start / end;
   }

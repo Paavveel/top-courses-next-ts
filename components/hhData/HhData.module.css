@@ -12,33 +12,34 @@
 .salary {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 0;
   padding: 20px;
   text-align: center;
-  gap: 20px 0;
 }
+
 .salary > div:not(:last-child) {
   border-right: 1px solid var(--gray-light);
 }
 
 .title {
+  margin-bottom: 10px;
   font-weight: 300;
   font-size: 20px;
   line-height: 27px;
-  margin-bottom: 10px;
 }
 
 .countValue {
+  color: var(--primary);
   font-weight: 700;
   font-size: 36px;
   line-height: 49px;
-  color: var(--primary);
 }
 
 .salaryValue {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 26px;
   line-height: 35px;
-  margin-bottom: 10px;
 }
 
 .rate {
@@ -62,9 +63,10 @@
   .salary {
     grid-template-columns: 1fr;
   }
+
   .salary > div:not(:last-child) {
+    padding-bottom: 20px;
     border-right: none;
     border-bottom: 1px solid var(--gray-light);
-    padding-bottom: 20px;
   }
 }

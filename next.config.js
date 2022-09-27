@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -28,6 +30,7 @@ const nextConfig = {
       },
       test: /\.svg$/,
     });
+    config.plugins.push(new StylelintPlugin());
 
     return config;
   },

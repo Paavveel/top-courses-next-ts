@@ -2,11 +2,11 @@
   display: inline-block;
   box-sizing: border-box;
   padding: 10px;
-  text-align: center;
+  font-size: 14px;
   font-family: inherit;
+  text-align: center;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -35,6 +35,7 @@
   display: inline-block;
   margin-left: 10px;
 }
+
 .down {
   transform: rotate(90deg);
   transition: all 0.3s;

@@ -6,7 +6,7 @@ import { API } from '../helpers/api';
 import { MenuItem } from '../interfaces';
 import { withLayout } from '../layout/Layout';
 
-const Home = ({ menu }: HomeProps) => {
+const Home = () => {
   const [rating, setRating] = useState<number>(3);
 
   return (

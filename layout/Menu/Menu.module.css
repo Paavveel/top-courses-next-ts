@@ -8,15 +8,15 @@
   grid-template-columns: 24px 1fr;
   gap: 20px;
   align-items: center;
+  margin-top: 20px;
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
-  margin-top: 20px;
 }
 
 .firstLevelList {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .firstLevelActive,
@@ -34,40 +34,38 @@
   margin-left: 12px;
   padding: 0 0 0 32px;
   list-style: none;
-
   border-left: 1px solid #dfdfdf;
 }
 
 .secondLevelBlock {
+  padding: 0;
   overflow: hidden;
   list-style: none;
-  padding: 0;
 }
 
 .secondLevel {
   width: fit-content;
   margin-bottom: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
+  padding: 0;
   color: var(--gray-dark);
-  font-family: inherit;
   font-weight: 300;
   font-size: 12px;
+  font-family: inherit;
   line-height: 16px;
-  padding: 0;
-  border: none;
+  text-transform: uppercase;
   background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .thirdLevel {
   margin-bottom: 10px;
-
-  cursor: pointer;
   color: var(--gray-dark);
   font-weight: 500;
   font-size: 14px;
   line-height: 19px;
   outline-offset: -1px;
+  cursor: pointer;
 }
 
 .thirdLevelActive,
