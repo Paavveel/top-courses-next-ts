@@ -46,6 +46,8 @@
 
 .advBlock {
   grid-column: middle / end;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .logo img {
@@ -99,11 +101,6 @@
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 15px;
-}
-
-.advBlock {
-  font-size: 16px;
-  line-height: 22px;
 }
 
 .advTitle {
